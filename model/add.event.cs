@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace model
 {
-    class AddEvent
+    public class AddEvent
     {
        public int Id_Wydarzenia { get; set; }
        public string imie { get; set; }

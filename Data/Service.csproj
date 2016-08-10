@@ -43,6 +43,16 @@
     <Compile Include="ClassServiss.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\model\model.csproj">
+      <Project>{7eac8bc8-fe18-42e5-ab8d-b66895385759}</Project>
+      <Name>model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\respository\respository.csproj">
+      <Project>{86733bd0-90d8-47a4-9c33-bb0318c529b0}</Project>
+      <Name>respository</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
