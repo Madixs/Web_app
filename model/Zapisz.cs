@@ -8,6 +8,9 @@ namespace model
 {
     class Save
     {
-        int charrr = 54;
+        public int ID_Wydarzenia { get; set; }
+        public string Nazwa_wydarzenia { get; set; }
+        public DateTime? Data { get; set; }
+
     }
 }
