@@ -8,5 +8,6 @@ namespace model
 {
     class Save
     {
+        int charrr = 54;
     }
 }
