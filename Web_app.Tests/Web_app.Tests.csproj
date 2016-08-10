@@ -102,6 +102,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\respository\respository.csproj">
+      <Project>{86733BD0-90D8-47A4-9C33-BB0318C529B0}</Project>
+      <Name>respository</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Web_app\Web_app.csproj">
       <Project>{BE0D06C5-650F-4E7D-95D1-953F0E7C892A}</Project>
       <Name>Web_app</Name>
