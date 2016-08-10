@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace model
 {
-    public class Class1
+    public class AddRoom
     {
     }
 }

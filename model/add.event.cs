@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace model
 {
-    class add
+    class AddEvent
     {
+
     }
 }
