@@ -8,5 +8,10 @@ namespace model
 {
     public class AddRoom
     {
+        public int ID_pokoj { get; set; } 
+        public int nr_pokoju { get; set; }
+        public int zajety { get; set; }
+
+
     }
 }
