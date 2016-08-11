@@ -19,7 +19,7 @@ namespace Data
             if (result != 0)
             {
                 return "Dziękujemy za zapisanie się na wydarzenie";
-             }
+            }
             else
             {
                 return "Błąd zapisu";
