@@ -40,10 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="add.event.cs" />
-    <Compile Include="Dod.pokoj.cs" />
+    <Compile Include="AddEvent.cs" />
+    <Compile Include="AddRoom.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Zapisz.cs" />
+    <Compile Include="Save.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

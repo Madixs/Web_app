@@ -40,17 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassServiss.cs" />
+    <Compile Include="Serviss.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\model\model.csproj">
+    <ProjectReference Include="..\model\Model.csproj">
       <Project>{7eac8bc8-fe18-42e5-ab8d-b66895385759}</Project>
-      <Name>model</Name>
+      <Name>Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\respository\respository.csproj">
+    <ProjectReference Include="..\respository\Repository.csproj">
       <Project>{86733bd0-90d8-47a4-9c33-bb0318c529b0}</Project>
-      <Name>respository</Name>
+      <Name>Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

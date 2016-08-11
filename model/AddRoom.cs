@@ -4,14 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace model
+namespace Model
 {
     public class AddRoom
     {
-        public int ID_pokoj { get; set; } 
-        public int nr_pokoju { get; set; }
-        public int zajety { get; set; }
-
-
+        public int roomID { get; set; } 
+        public int roomNamber { get; set; }
+        public int isFree { get; set; }
     }
 }

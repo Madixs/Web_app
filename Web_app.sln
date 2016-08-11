@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web_app", "Web_app\Web_app.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web_app.Tests", "Web_app.Tests\Web_app.Tests.csproj", "{3B6B44FD-3F2F-49D7-83F0-0737D1914F06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "model", "model\model.csproj", "{7EAC8BC8-FE18-42E5-AB8D-B66895385759}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "model\Model.csproj", "{7EAC8BC8-FE18-42E5-AB8D-B66895385759}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "respository", "respository\respository.csproj", "{86733BD0-90D8-47A4-9C33-BB0318C529B0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "respository\Repository.csproj", "{86733BD0-90D8-47A4-9C33-BB0318C529B0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Data\Service.csproj", "{41B742F5-DBA3-4C4F-AA5F-DEDF5340AEE0}"
 EndProject
