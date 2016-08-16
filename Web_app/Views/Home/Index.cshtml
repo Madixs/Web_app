@@ -1,10 +1,19 @@
-﻿<div>
-    <a href="">Strona Usera</a>
-</div>
-<div>
-    <a href=""> Strona Admina</a>
-</div>
-
+﻿
+<form data-bind="submit: create">
+    <div>First Name:</div>
+    <div><input type="text" name="firstName" /></div>
+    <div>Last Name:</div>
+    <div><input type="text" name="lastName" /></div>
+    <div>nr_telefonu:</div>
+    <div><input type="text" name="phoneNumbe" /></div>
+    <div>email:</div>
+    <div><input type="text" name="email" /></div>
+    <div>Numer Pokoju:</div>
+    <div><input type="text" name="roomNumber" /></div>
+    <div>Rodzaj wydarzenia:</div>
+    <div><input type="text" name="eventID" /></div>
+    <button type="submit">Add</button>
+</form>
 
 
 @section scripts
@@ -20,16 +29,15 @@
         function UsersViewModel() {
 
             var self = this;
-            var baseUri = "http://localhost:54733/";
+            var baseUri = "http://localhost:54733/api/Admin/Post";
             self.users = ko.observableArray(); // Init an empty observable array
 
             self.create = function (formElement) {
                 $.post(baseUri, $(formElement).serialize(), null, "json")
-                    .done(function (o) {
-                        self.users.push(o);
-                    });
             }
+
             $.getJSON(baseUri, self.users);
+
         }
     </script>
 }

@@ -13,12 +13,21 @@ namespace Web_app.Controllers
     public class AdminController : ApiController
     {
 
+        // GET api/event
 
-        // POST: Admin
+        [ResponseType(typeof(IEnumerable<DispalyData>))]
+        public IHttpActionResult Get()
+        {
+            return Ok(Servis.DisplayAll());
+        }
+
+        // POST api/event
         [ResponseType(typeof(ModelData))]
+
         public IHttpActionResult Post(ModelData data)
         {
-            return Ok(Servis.SaveData(data.eventID, data.firstName, data.lastName, data.phoneNumber, data.roomNumber, data.email));
+            if (data == null) { return Ok(Servis.DisplayAll()); }
+            return Ok(Servis.SaveData(data.eventID, data.firstName, data.lastName, data.phoneNumber, data.roomNumber, data.email)); 
         }
 
     }
