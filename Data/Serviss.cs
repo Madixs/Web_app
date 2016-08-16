@@ -10,47 +10,36 @@ namespace Data
 {
     public class Servis
     {
-
-        RepositoryDB repo;
+        RepositoryDB repositor;
         public Servis()
         {
-            repo = new RepositoryDB();
+            repositor = new RepositoryDB();
+        }
+        public void SaveData(string seventID, string sfirstName, string slastName, int sphonNamber, int sroomNamber, string semail)
+        {
+            repositor.InputData<ModelData>("Zapis_usera", new { firstName = sfirstName, lastName = slastName, phoneNumber = sphonNamber, email = semail, roomNumber = sroomNamber, eventID = seventID });
         }
 
-        public string SaveData(string eventID, string firstName, string lastName, int phonNamber, int roomNamber, string email)
+        public string DisplayAll()
         {
+            List<DispalyData> listToDisplay = repositor.FillCollection<DispalyData>("SelectWydarzenia", new { });
 
-            //TODO Zapisuje uczestnika na wydarzenie
-            AddEvent result = repo.InputData<AddEvent>("", new { }); //Zwraca rezultat po dodaniu rekordu. do upewnienia czy zadziałało?
-
-            if (result != null)
+            if (listToDisplay != null)
             {
-                return "Dziękujemy za zapisanie się na wydarzenie";
+                foreach (DispalyData dd in listToDisplay)
+                {
+
+                }
             }
-            else
-            {
-                return "Błąd zapisu";
-            }
-
+            //TODO Dodać obsługę błędów
         }
 
-
-        public void Display()
+        public List<DispalyData> Display(string param)
         {
-            //TODO Podgląd wszystkich danych
-        }
-
-        public void Display(string param)
-        {
-            //TODO Podgląd na jakie wydarzenie zostałeś zapisany dany id ID
-        }
-
-        public string Update(string eventID, string firstName, string lastName, int phonNamber, int roomNamber, string email)
-        {
-            //TODO Uaktualnienie danych, zwraca potwierdzenie czy się udało wykonać update
-            return "";
+            List<DispalyData> listToDisplay = repositor.FillCollection<DispalyData>("SelectWydarzeniaFilter", new { expected = param });
+            return listToDisplay;
+            
         }
     }
-}
 
 

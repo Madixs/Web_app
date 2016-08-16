@@ -6,17 +6,18 @@ using System.Threading.Tasks;
 using Dapper;
 using System.Data.SqlClient;
 using System.Data;
+using Model;
 
 namespace Repository
 {
     public class RepositoryDB
     {
 
-        
+        #region Metody do łączenia z bazą
         private static readonly string _connectionString = "Server=Tsteodserver01v;Database=testy;Integrated Security=True;";
 
         
-        public static T FillObject<T>(string storedProcedure, object args)
+        public T FillObject<T>(string storedProcedure, object args)
             where T : class, new()
         {
             T result = default(T);
@@ -37,7 +38,7 @@ namespace Repository
         }
 
         
-        public static List<T> FillCollection<T>(string storedProcedure, object args)
+        public List<T> FillCollection<T>(string storedProcedure, object args)
           where T : class, new()
         {
             List<T> result = new List<T>();
@@ -58,7 +59,7 @@ namespace Repository
         }
 
         
-        public static T FillStructur<T>(string storedProcedure, object args)
+        public T FillStructur<T>(string storedProcedure, object args)
           where T : struct
         {
             T result = default(T);
@@ -97,6 +98,11 @@ namespace Repository
 
             return result;
         }
+        #endregion
+        #region Metody do wysyłania danych do serwisu
+
+        #endregion
     }
-}
+} 
+
 
