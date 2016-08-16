@@ -99,7 +99,50 @@ namespace Repository
             return result;
         }
         #endregion
-        #region Metody do wysyłania danych do serwisu
+        #region Metody obsługujące bazę
+        public void SaveData(int seventID, string sfirstName, string slastName, string sphonNamber, int sroomNamber, string semail)
+        {
+            InputData<ModelData>("Zapis_usera", new { firstName = sfirstName, lastName = slastName, phoneNumber = sphonNamber, email = semail, roomNumber = sroomNamber, eventID = seventID });
+        }
+
+        public string DisplayAll()
+        {
+            List<DispalyData> listToDisplay = FillCollection<DispalyData>("SelectWydarzenia", new { });
+            string wynik = "";
+            foreach (DispalyData dd in listToDisplay)
+            {
+                wynik += dd.firstName + dd.lastName + ". nr pokoju: " + dd.roomNumber + "\n";
+            }
+            return wynik;
+            //TODO Dodać obsługę błędów
+        }
+
+        public List<DispalyData> Display(string param)
+        {
+
+            List<DispalyData> listToDisplay = FillCollection<DispalyData>("SelectWydarzeniaFilter", new { expected = param });
+
+            return listToDisplay;
+
+        }
+
+        public List<RoomEmpty> DisplayRoomEmpty()
+        {
+            List<RoomEmpty> roomEmpty = FillCollection<RoomEmpty>("hch_kwaterunek_puste", new { });
+            return roomEmpty;
+        }
+
+        public List<EventList> DisplayEventList()
+        {
+            List<EventList> eventList = FillCollection<EventList>("hch_event_name", new { });
+            return eventList;
+        }
+
+        public List<EventChoice> DisplayEventChoice(string eventName)
+        {
+            List<EventChoice> eventChoice = FillCollection<EventChoice>("hch_event_name_wybor", new { nazwa = eventName });
+            return eventChoice;
+        }
 
         #endregion
     }

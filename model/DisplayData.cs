@@ -12,9 +12,9 @@ namespace Model
         public string lastName { get; set; }
         public string phoneNumber { get; set; }
         public string email { get; set; }
-        public int lroomNumber { get; set; }
+        public int roomNumber { get; set; }
         public int eventNameer { get; set; }
-        public string eeventDate { get; set; }
+        public string eventDate { get; set; }
         public string signUpDate { get; set; }
 
     }
