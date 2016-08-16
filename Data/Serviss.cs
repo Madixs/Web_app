@@ -21,6 +21,12 @@ namespace Serviss
         {
             return repo.DisplayAll();
         }
+
+        public bool ServisSaveData(int seventID, string sfirstName, string slastName, string sphonNamber, int sroomNamber, string semail)
+        {
+            repo.SaveData(seventID, sfirstName, slastName, sphonNamber, sroomNamber, semail);
+            return true;
+        }
     }
 }
 
