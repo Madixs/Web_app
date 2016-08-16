@@ -13,7 +13,7 @@ namespace Resolvers
         public static IServiss Get()
         {
             var repository = new RepositoryDB();
-            return new Serviss(repository);
+            return new Serviss.Serviss(repository);
         }
     }
 }
