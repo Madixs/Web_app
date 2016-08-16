@@ -12,19 +12,20 @@ namespace Data
     {
         static RepositoryDB repositor = new RepositoryDB();
 
-        public static void SaveData(int seventID, string sfirstName, string slastName, string sphonNamber, int sroomNamber, string semail)
+        public static bool SaveData(int seventID, string sfirstName, string slastName, string sphonNamber, int sroomNamber, string semail)
         {
             repositor.InputData<ModelData>("Zapis_usera", new { firstName = sfirstName, lastName = slastName, phoneNumber = sphonNamber, email = semail, roomNumber = sroomNamber, eventID = seventID });
+            return true;
         }
 
         public static List<DispalyData> DisplayAll()
         {
             List<DispalyData> listToDisplay = repositor.FillCollection<DispalyData>("SelectWydarzenia", new { });
             return listToDisplay;
-            foreach(DispalyData dd in listToDisplay.)
-            {
+           // foreach(DispalyData dd in listToDisplay)
+            //{
 
-            }
+            //}
             //TODO Dodać obsługę błędów
         }
 
