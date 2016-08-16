@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{41B742F5-DBA3-4C4F-AA5F-DEDF5340AEE0}</ProjectGuid>
+    <ProjectGuid>{951187DA-1F21-4658-8A0E-E77834641CC9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Data</RootNamespace>
-    <AssemblyName>Data</AssemblyName>
+    <RootNamespace>Resorwers</RootNamespace>
+    <AssemblyName>Resorwers</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,11 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IServiss.cs" />
-    <Compile Include="Serviss.cs" />
+    <Compile Include="ServissResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Data\Service.csproj">
+      <Project>{41b742f5-dba3-4c4f-aa5f-dedf5340aee0}</Project>
+      <Name>Service</Name>
+    </ProjectReference>
     <ProjectReference Include="..\model\Model.csproj">
       <Project>{7eac8bc8-fe18-42e5-ab8d-b66895385759}</Project>
       <Name>Model</Name>

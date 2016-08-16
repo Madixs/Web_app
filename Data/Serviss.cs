@@ -7,15 +7,20 @@ using Repository;
 using Model;
 
 
-namespace Data
+namespace Serviss
 {
-    public static class Servis
+    public class Serviss : IServiss
     {
 
-        static RepositoryDB repositor = new RepositoryDB();
-
-       
-
+        RepositoryDB repo;
+        public Serviss(RepositoryDB r)
+        {
+            repo = r;
+        }
+        public string ServisDisplayAll()
+        {
+            return repo.DisplayAll();
+        }
     }
 }
 

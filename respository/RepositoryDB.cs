@@ -10,7 +10,7 @@ using Model;
 
 namespace Repository
 {
-    public class RepositoryDB
+    public class RepositoryDB : IRepository
     {
 
         #region Metody do łączenia z bazą
