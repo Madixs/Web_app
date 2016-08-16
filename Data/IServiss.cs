@@ -9,5 +9,6 @@ namespace Serviss
     public interface IServiss
     {
         string ServisDisplayAll();
+        bool ServisSaveData(int seventID, string sfirstName, string slastName, string sphonNamber, int sroomNamber, string semail);
     }
 }
