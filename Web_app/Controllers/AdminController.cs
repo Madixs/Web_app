@@ -22,12 +22,20 @@ namespace Web_app.Controllers
         }
 
         // POST api/event
-        [ResponseType(typeof(ModelData))]
 
+        [ResponseType(typeof(ModelData))]
         public IHttpActionResult Post(ModelData data)
         {
-            if (data == null) { return Ok(Servis.DisplayAll()); }
-            return Ok(Servis.SaveData(data.eventID, data.firstName, data.lastName, data.phoneNumber, data.roomNumber, data.email)); 
+            int? eventID = data.eventID;
+            string name = data.firstName;
+            string surname = data.lastName;
+            string phoneNumber = data.phoneNumber;
+            int? room = data.roomNumber;
+            string email = data.email;
+
+
+      return Ok(Servis.DisplayAll()); 
+            //return Ok(Servis.SaveData(eventID,name,surname,phoneNumber,room,email)); 
         }
 
     }
