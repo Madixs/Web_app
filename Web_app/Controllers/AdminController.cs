@@ -6,7 +6,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using Model;
 using System.Web.Http.Description;
-using Data;
+using Serviss;
 
 namespace Web_app.Controllers
 {
@@ -18,7 +18,7 @@ namespace Web_app.Controllers
         [ResponseType(typeof(IEnumerable<DispalyData>))]
         public IHttpActionResult Get()
         {
-            return Ok(Servis.DisplayAll());
+            return Ok(Serviss.DisplayAll());
         }
 
         // POST api/event
@@ -34,7 +34,7 @@ namespace Web_app.Controllers
             string email = data.email;
 
 
-      return Ok(Servis.DisplayAll()); 
+      return Ok(data); 
             //return Ok(Servis.SaveData(eventID,name,surname,phoneNumber,room,email)); 
         }
 
