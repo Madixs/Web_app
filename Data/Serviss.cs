@@ -12,10 +12,10 @@ namespace Serviss
     public class Serviss : IServiss
     {
 
-        RepositoryDB repo;
-        public Serviss(RepositoryDB r)
+        private IRepository repo;
+        public Serviss(IRepository r)
         {
-            repo = r;
+            this.repo = r;
         }
         public string ServisDisplayAll()
         {

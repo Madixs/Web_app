@@ -334,6 +334,10 @@
       <Project>{951187da-1f21-4658-8a0e-e77834641cc9}</Project>
       <Name>Resolvers</Name>
     </ProjectReference>
+    <ProjectReference Include="..\respository\Repository.csproj">
+      <Project>{86733bd0-90d8-47a4-9c33-bb0318c529b0}</Project>
+      <Name>Repository</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

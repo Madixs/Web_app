@@ -13,6 +13,7 @@ namespace Web_app.Controllers
 {
     public class AdminController : ApiController
     {
+        
 
         // GET api/event
 
@@ -35,7 +36,7 @@ namespace Web_app.Controllers
             string email = data.email;
 
 
-      return Ok(); 
+      return Ok(Resolvers.ServissResolver.Get.); 
             //return Ok(Servis.SaveData(eventID,name,surname,phoneNumber,room,email)); 
         }
 
