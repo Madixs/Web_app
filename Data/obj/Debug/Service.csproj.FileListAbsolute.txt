@@ -1,0 +1,11 @@
+C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Data\bin\Debug\Data.dll
+C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Data\bin\Debug\Data.pdb
+C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Data\bin\Debug\model.dll
+C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Data\bin\Debug\respository.dll
+C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Data\bin\Debug\Dapper.dll
+C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Data\bin\Debug\model.pdb
+C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Data\bin\Debug\respository.pdb
+C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Data\bin\Debug\Dapper.xml
+C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Data\obj\Debug\Service.csprojResolveAssemblyReference.cache
+C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Data\obj\Debug\Data.dll
+C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Data\obj\Debug\Data.pdb
