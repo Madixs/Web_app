@@ -8,38 +8,30 @@ using Model;
 
 namespace Data
 {
-    public class Servis
+    public static class Servis
     {
-        RepositoryDB repositor;
-        public Servis()
-        {
-            repositor = new RepositoryDB();
-        }
-        public void SaveData(string seventID, string sfirstName, string slastName, int sphonNamber, int sroomNamber, string semail)
+        static RepositoryDB repositor = new RepositoryDB();
+
+        public static void SaveData(string seventID, string sfirstName, string slastName, int sphonNamber, int sroomNamber, string semail)
         {
             repositor.InputData<ModelData>("Zapis_usera", new { firstName = sfirstName, lastName = slastName, phoneNumber = sphonNamber, email = semail, roomNumber = sroomNamber, eventID = seventID });
         }
 
-        public string DisplayAll()
+        public static List<DispalyData> DisplayAll()
         {
             List<DispalyData> listToDisplay = repositor.FillCollection<DispalyData>("SelectWydarzenia", new { });
+            return listToDisplay;
 
-            if (listToDisplay != null)
-            {
-                foreach (DispalyData dd in listToDisplay)
-                {
-
-                }
-            }
             //TODO Dodać obsługę błędów
         }
 
-        public List<DispalyData> Display(string param)
+        public static List<DispalyData> Display(string param)
         {
             List<DispalyData> listToDisplay = repositor.FillCollection<DispalyData>("SelectWydarzeniaFilter", new { expected = param });
             return listToDisplay;
-            
+
         }
     }
+}
 
 
