@@ -33,10 +33,5 @@ namespace Repository
 
 
         List<EventChoice> DisplayEventChoice(string eventName);
-        
-
-
-
-
     }
 }
