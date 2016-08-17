@@ -13,9 +13,16 @@ namespace Web_app.Controllers
 {
     public class AdminController : ApiController
     {
-        
 
-        // GET api/event
+        [ResponseType(typeof(IEnumerable<RoomEmpty>))]
+
+       // [System.Web.Http.HttpGet]
+        public List<RoomEmpty> pokoje()
+        {
+            return ServissResolver.Get().ServisRoomEmpty();
+        }
+
+        // GET api/Admin
 
         [ResponseType(typeof(IEnumerable<DispalyData>))]
         public IHttpActionResult Get()
@@ -23,7 +30,7 @@ namespace Web_app.Controllers
             return Ok();
         }
 
-        // POST api/event
+        // POST api/Admin
 
         [ResponseType(typeof(ModelData))]
         public IHttpActionResult Post(ModelData data)
