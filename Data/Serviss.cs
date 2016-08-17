@@ -17,7 +17,7 @@ namespace Service
         {
             this.repo = r;
         }
-        public string ServisDisplayAll()
+        public List<DispalyData> ServisDisplayAll()
         {
             return repo.DisplayAll();
         }
@@ -27,6 +27,24 @@ namespace Service
             repo.SaveData(seventID, sfirstName, slastName, sphonNamber, sroomNamber, semail);
             return true;
         }
+        public List<DispalyData> ServisDisplayFilter(string param)
+        {
+            return repo.Display(param);
+        }
+        public List<EventChoice> ServisEventChoice(string eventName)
+        {
+            return repo.DisplayEventChoice(eventName);
+
+        }
+        public List<EventList> ServisEventList()
+        {
+            return repo.DisplayEventList();
+        }
+        public List<RoomEmpty> ServisRoomEmpty()
+        {
+            return repo.DisplayRoomEmpty();
+        }
+
     }
 }
 
