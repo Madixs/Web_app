@@ -21,7 +21,7 @@ namespace Repository
         void SaveData(int seventID, string sfirstName, string slastName, string sphonNamber, int sroomNamber, string semail);
 
 
-        string DisplayAll();
+        List<DispalyData> DisplayAll();
 
 
         List<DispalyData> Display(string param);

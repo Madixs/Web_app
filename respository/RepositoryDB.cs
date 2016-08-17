@@ -105,16 +105,11 @@ namespace Repository
             InputData<ModelData>("Zapis_usera", new { firstName = sfirstName, lastName = slastName, phoneNumber = sphonNamber, email = semail, roomNumber = sroomNamber, eventID = seventID });
         }
 
-        public string DisplayAll()
+        public List<DispalyData> DisplayAll()
         {
             List<DispalyData> listToDisplay = FillCollection<DispalyData>("SelectWydarzenia", new { });
-            string wynik = "";
-            foreach (DispalyData dd in listToDisplay)
-            {
-                wynik += dd.firstName + dd.lastName + ". nr pokoju: " + dd.roomNumber + "\n";
-            }
-            return wynik;
-            //TODO Dodać obsługę błędów
+            return listToDisplay;
+            
         }
 
         public List<DispalyData> Display(string param)
