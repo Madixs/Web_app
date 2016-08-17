@@ -5,14 +5,14 @@
     <div>Last Name:</div>
     <div><input type="text" name="lastName" /></div>
     <div>nr_telefonu:</div>
-    <div><input type="text" name="phoneNumbe" /></div>
+    <div><input type="text" name="phoneNumber" /></div>
     <div>email:</div>
     <div><input type="text" name="email" /></div>
     <div>Numer Pokoju:</div>
     <div><input type="text" name="roomNumber" /></div>
     <div>Rodzaj wydarzenia:</div>
     <div><input type="text" name="eventID" /></div>
-    <button type="submit">Add</button>
+    <button type="submit">submit</button>
 </form>
 
 
@@ -21,26 +21,25 @@
     <script language="javascript">
 
         //When the DOM is loaded, call the ko.applyBindings() and pass in a new instance of the UsersViewModel:
+
         $(document).ready(function () {
             ko.applyBindings(new UsersViewModel());
         });
 
+
+
         //Create a user view-model class:
         function UsersViewModel() {
 
-            var self = this;
             var baseUri = "http://localhost:54733/api/Admin";
-            self.users = ko.observableArray(); // Init an empty observable array
+            
 
-            self.create = function (formElement) {
+            this.create = function (formElement) {
                 $.post(baseUri, $(formElement).serialize(), null, "json")
-                    .done(function (o) {
-                        self.users.push(o);
-                    });
             }
 
-            $.getJSON(baseUri, self.users);
+            
 
         }
-    </script>
+  </script>
 }
