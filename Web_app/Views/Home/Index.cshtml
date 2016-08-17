@@ -11,7 +11,7 @@
     <div>Numer Pokoju:</div>
     <select type="text" name="roomNumber" data-bind="options: viewModel.room,optionsCaption: 'Choose room'"></select>
     <div>Rodzaj wydarzenia:</div>
-    <select type="text" name="eventID" data-bind="options: viewModel2.Id,optionsText:function(){return viewModel2.Id} ,optionsCaption: 'Choose event'"></select>
+    <select type="text" name="eventID" data-bind="options: viewModel2.events,optionsText: 'event',optionsValue:'Id',optionsCaption: 'Choose event'"></select>
     <button type="submit">submit</button>
 </form>
 
@@ -23,20 +23,20 @@
 
     <script language="javascript">
 
-        //When the DOM is loaded, call the ko.applyBindings() and pass in a new instance of the UsersViewModel:
+   
        
 
         $(document).ready(function () {
             ko.applyBindings(new UsersViewModel());
         });
 
-
         var viewModel = {
             // These are the initial options
             room: ko.observableArray()
         };
+
         var viewModel2 = {
-           event: ko.observableArray(), Id: ko.observableArray()
+            events: ko.observableArray()
         }
 
         function UsersViewModel() {
@@ -58,9 +58,11 @@
 
              $.get("http://localhost:54733/api/event", function (data) {
                  $.each(data, function (n, val) {
-                     viewModel2.Id.push(val.ID_Wydarzenia);
-                     viewModel2.event.push(val.rodz_wydarzenia);
 
+                     viewModel2.events.push({
+                         Id: val.ID_Wydarzenia,
+                         event: val.rodz_wydarzenia
+                     })
 
                  });
              }, "json");

@@ -13,15 +13,6 @@ namespace Web_app.Controllers
 {
     public class AdminController : ApiController
     {
-
-        [ResponseType(typeof(IEnumerable<RoomEmpty>))]
-
-       // [System.Web.Http.HttpGet]
-        public List<RoomEmpty> pokoje()
-        {
-            return ServissResolver.Get().ServisRoomEmpty();
-        }
-
         // GET api/Admin
 
         [ResponseType(typeof(IEnumerable<DispalyData>))]
@@ -42,7 +33,7 @@ namespace Web_app.Controllers
             int room = data.roomNumber;
             int eventID = data.eventID;
             string email = data.email;
-            return Ok();
+            return Ok(ServissResolver.Get().ServisSaveData(eventID, name, surname, phoneNumber, room, email)); 
             //return Ok(Servis.SaveData(eventID,name,surname,phoneNumber,room,email)); 
             //ServissResolver.Get().ServisSaveData(eventID, name, surname, phoneNumber, room, email)); 
         }
