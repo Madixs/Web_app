@@ -32,6 +32,6 @@ namespace Repository
         List<EventList> DisplayEventList();
 
 
-        List<EventChoice> DisplayEventChoice(string eventName);
+        List<EventChoice> DisplayEventChoice();
     }
 }

@@ -133,9 +133,9 @@ namespace Repository
             return eventList;
         }
 
-        public List<EventChoice> DisplayEventChoice(string eventName)
+        public List<EventChoice> DisplayEventChoice()
         {
-            List<EventChoice> eventChoice = FillCollection<EventChoice>("hch_event_name_wybor", new { nazwa = eventName });
+            List<EventChoice> eventChoice = FillCollection<EventChoice>("hch_event_name", new {});
             return eventChoice;
         }
 

@@ -31,9 +31,9 @@ namespace Service
         {
             return repo.Display(param);
         }
-        public List<EventChoice> ServisEventChoice(string eventName)
+        public List<EventChoice> ServisEventChoice()
         {
-            return repo.DisplayEventChoice(eventName);
+            return repo.DisplayEventChoice();
 
         }
         public List<EventList> ServisEventList()

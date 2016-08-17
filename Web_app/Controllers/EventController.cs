@@ -15,7 +15,7 @@ namespace Web_app.Controllers
     {
         // GET: Event
         [System.Web.Http.HttpGet]
-        public List<EventChoice> pokoje()
+        public List<EventChoice> event_name()
         {
             return ServissResolver.Get().ServisEventChoice();
         }

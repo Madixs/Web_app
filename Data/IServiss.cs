@@ -15,7 +15,7 @@ namespace Service
         List<DispalyData> ServisDisplayAll();
         List<DispalyData> ServisDisplayFilter(string param);
 
-        List<EventChoice> ServisEventChoice(string eventName);
+        List<EventChoice> ServisEventChoice();
 
         List<EventList> ServisEventList();
 

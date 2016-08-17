@@ -42,8 +42,9 @@ namespace Web_app.Controllers
             int room = data.roomNumber;
             int eventID = data.eventID;
             string email = data.email;
-      return Ok(ServissResolver.Get().ServisSaveData(eventID, name, surname, phoneNumber, room, email)); 
+            return Ok();
             //return Ok(Servis.SaveData(eventID,name,surname,phoneNumber,room,email)); 
+            //ServissResolver.Get().ServisSaveData(eventID, name, surname, phoneNumber, room, email)); 
         }
 
     }

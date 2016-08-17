@@ -9,9 +9,9 @@
     <div>email:</div>
     <div><input type="text" name="email" /></div>
     <div>Numer Pokoju:</div>
-    <select data-bind="options: viewModel.room"></select>
+    <select type="text" name="roomNumber" data-bind="options: viewModel.room,optionsCaption: 'Choose room'"></select>
     <div>Rodzaj wydarzenia:</div>
-    <select data-bind="options: viewModel.event"></select>
+    <select type="text" name="eventID" data-bind="options: viewModel2.Id,optionsText:function(){return viewModel2.Id} ,optionsCaption: 'Choose event'"></select>
     <button type="submit">submit</button>
 </form>
 
@@ -35,7 +35,9 @@
             // These are the initial options
             room: ko.observableArray()
         };
-
+        var viewModel2 = {
+           event: ko.observableArray(), Id: ko.observableArray()
+        }
 
         function UsersViewModel() {
 
@@ -45,12 +47,21 @@
                 $.post(baseUri, $(formElement).serialize(), null, "json"), $(formElement).each(function () {
                     this.reset();
                 });
-
              }          
 
              $.get("http://localhost:54733/api/pokoje", function (data) {
                  $.each(data, function (n, val) {
                      viewModel.room.push(val.ID_Kwaterunek);
+                 });
+             }, "json");
+
+
+             $.get("http://localhost:54733/api/event", function (data) {
+                 $.each(data, function (n, val) {
+                     viewModel2.Id.push(val.ID_Wydarzenia);
+                     viewModel2.event.push(val.rodz_wydarzenia);
+
+
                  });
              }, "json");
         }
