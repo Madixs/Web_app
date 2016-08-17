@@ -9,5 +9,7 @@ namespace Model
     public class EventChoice
     {
         public int ID_Wydarzenia { get; set; }
+        public string EventName { get; set; }
+
     }
 }

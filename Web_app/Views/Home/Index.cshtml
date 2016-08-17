@@ -1,5 +1,5 @@
 ﻿
-<form id="zapis" data-bind="submit: create">
+<form data-bind="submit: create">
     <div>First Name:</div>
     <div><input type="text" name="firstName" /></div>
     <div>Last Name:</div>
@@ -9,53 +9,50 @@
     <div>email:</div>
     <div><input type="text" name="email" /></div>
     <div>Numer Pokoju:</div>
-    <select data-bind="options: availableCountries,
-                   value: selectedCountry,
-                   optionsCaption: 'Choose...'"></select>
+    <select data-bind="options: viewModel.room"></select>
     <div>Rodzaj wydarzenia:</div>
-    <div><select> </select></div>
+    <select data-bind="options: viewModel.event"></select>
     <button type="submit">submit</button>
 </form>
-<div data-bind="visible: selectedCountry">
-    <!-- Appears when you select something -->
-    You have chosen a country with population
-    <span data-bind="text: selectedCountry() ? selectedCountry().countryPopulation : 'unknown'"></span>.
-</div>
-
 
 
 
 @section scripts
 {
+
+
     <script language="javascript">
 
         //When the DOM is loaded, call the ko.applyBindings() and pass in a new instance of the UsersViewModel:
-        var _Get = Array();
-
-        window.onload = function () {
-            $.get("http://localhost:54733/api/pokoje", function (data) {   
-                $.each(data, function (n, val) {
-                    _Get[n] = val.ID_Kwaterunek;
-                });
-            }, "json");
-
-        }
+       
 
         $(document).ready(function () {
             ko.applyBindings(new UsersViewModel());
         });
 
 
+        var viewModel = {
+            // These are the initial options
+            room: ko.observableArray()
+        };
 
-        //Create a user view-model class:
+
         function UsersViewModel() {
+
+
             var baseUri = "http://localhost:54733/api/Admin";
              this.create = function (formElement) {
                 $.post(baseUri, $(formElement).serialize(), null, "json"), $(formElement).each(function () {
                     this.reset();
                 });
 
-            }
+             }          
+
+             $.get("http://localhost:54733/api/pokoje", function (data) {
+                 $.each(data, function (n, val) {
+                     viewModel.room.push(val.ID_Kwaterunek);
+                 });
+             }, "json");
         }
 
 
