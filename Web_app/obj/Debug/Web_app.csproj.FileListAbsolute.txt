@@ -15,6 +15,7 @@ C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\Web_app.dll
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\Web_app.pdb
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\Antlr3.Runtime.dll
+C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\Data.dll
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\EntityFramework.dll
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\EntityFramework.SqlServer.dll
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\Microsoft.AI.Agent.Intercept.dll
@@ -38,8 +39,11 @@ C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\Microsoft.Owin.Security.OAuth.dll
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\Microsoft.Owin.Security.Twitter.dll
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\model.dll
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\Newtonsoft.Json.dll
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\Owin.dll
+C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\Resorwers.dll
+C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\respository.dll
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\System.Net.Http.Formatting.dll
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\System.Web.Helpers.dll
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\System.Web.Http.dll
@@ -52,6 +56,11 @@ C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\System.Web.WebPages.dll
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\System.Web.WebPages.Razor.dll
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\WebGrease.dll
+C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\Dapper.dll
+C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\Data.pdb
+C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\model.pdb
+C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\Resorwers.pdb
+C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\respository.pdb
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\Microsoft.AI.DependencyCollector.xml
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\Microsoft.AI.Web.xml
@@ -85,14 +94,7 @@ C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\System.Web.Http.Owin.xml
+C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\Dapper.xml
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\obj\Debug\Web_app.csprojResolveAssemblyReference.cache
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\obj\Debug\Web_app.dll
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\obj\Debug\Web_app.pdb
-C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\Data.dll
-C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\model.dll
-C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\Data.pdb
-C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\model.pdb
-C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\respository.dll
-C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\Dapper.dll
-C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\respository.pdb
-C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Web_app\bin\Dapper.xml

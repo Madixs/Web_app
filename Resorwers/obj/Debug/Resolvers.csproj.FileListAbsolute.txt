@@ -1,4 +1,3 @@
-C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Resorwers\obj\Debug\Resolvers.csprojResolveAssemblyReference.cache
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Resorwers\bin\Debug\Resorwers.dll
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Resorwers\bin\Debug\Resorwers.pdb
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Resorwers\bin\Debug\Data.dll
@@ -9,5 +8,6 @@ C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Resorwer
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Resorwers\bin\Debug\model.pdb
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Resorwers\bin\Debug\respository.pdb
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Resorwers\bin\Debug\Dapper.xml
+C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Resorwers\obj\Debug\Resolvers.csprojResolveAssemblyReference.cache
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Resorwers\obj\Debug\Resorwers.dll
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\Resorwers\obj\Debug\Resorwers.pdb

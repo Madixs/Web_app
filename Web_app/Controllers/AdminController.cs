@@ -36,7 +36,7 @@ namespace Web_app.Controllers
             string email = data.email;
 
 
-      return Ok(ServissResolver.Get().ServisSaveData); 
+      return Ok(); 
             //return Ok(Servis.SaveData(eventID,name,surname,phoneNumber,room,email)); 
         }
 
