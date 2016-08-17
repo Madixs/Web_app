@@ -12,7 +12,7 @@ namespace Service
 
         bool ServisSaveData(int seventID, string sfirstName, string slastName, string sphonNamber, int sroomNamber, string semail);
 
-
+        List<DispalyData> ServisDisplayAll();
         List<DispalyData> ServisDisplayFilter(string param);
 
         List<EventChoice> ServisEventChoice(string eventName);
