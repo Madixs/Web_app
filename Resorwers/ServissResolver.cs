@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Serviss;
+using Service;
 using Repository;
 
 namespace Resolvers
@@ -13,7 +13,7 @@ namespace Resolvers
         public static IServiss Get()
         {
             var repository = new RepositoryDB();
-            return new Serviss.Serviss(repository);
+            return new Serviss(repository);
         }
     }
 }

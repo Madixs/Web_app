@@ -7,7 +7,7 @@ using Repository;
 using Model;
 
 
-namespace Serviss
+namespace Service
 {
     public class Serviss : IServiss
     {

@@ -7,7 +7,7 @@ using System.Web.Mvc;
 using Model;
 using System.Web.Http.Description;
 using Resolvers;
-using Serviss;
+using Service;
 
 namespace Web_app.Controllers
 {
@@ -36,7 +36,7 @@ namespace Web_app.Controllers
             string email = data.email;
 
 
-      return Ok(Resolvers.ServissResolver.Get.); 
+      return Ok(ServissResolver.Get().ServisSaveData); 
             //return Ok(Servis.SaveData(eventID,name,surname,phoneNumber,room,email)); 
         }
 
