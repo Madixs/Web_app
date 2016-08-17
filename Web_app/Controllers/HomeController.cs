@@ -15,7 +15,15 @@ namespace Web_app.Controllers
 
             return View();
         }
-
-
+        public ActionResult User()
+        {
+            ViewBag.Title = "User Side";
+            return View();
+        }
+        public ActionResult Admin()
+        {
+            ViewBag.Title = "Admin Side";
+            return View();
+        }
     }
 }
