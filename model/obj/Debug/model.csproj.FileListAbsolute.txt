@@ -5,6 +5,5 @@ C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\model\ob
 C:\Users\hubert.checinski\Documents\Visual Studio 2015\Projects\Web_app\model\obj\Debug\model.pdb
 C:\Users\krystian.sipinski\Documents\Visual Studio 2015\Projects\Web_app\model\bin\Debug\model.dll
 C:\Users\krystian.sipinski\Documents\Visual Studio 2015\Projects\Web_app\model\bin\Debug\model.pdb
-C:\Users\krystian.sipinski\Documents\Visual Studio 2015\Projects\Web_app\model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 C:\Users\krystian.sipinski\Documents\Visual Studio 2015\Projects\Web_app\model\obj\Debug\model.dll
 C:\Users\krystian.sipinski\Documents\Visual Studio 2015\Projects\Web_app\model\obj\Debug\model.pdb
