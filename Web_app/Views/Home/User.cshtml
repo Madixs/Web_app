@@ -87,6 +87,7 @@
                 $.post(baseUri, $(formElement).serialize(), null, "json"), $(formElement).each(function () {
                     this.reset();
                 });
+                viewModel.room.removeAll();
                 viewModel.getRooms();
                 alert("Zapisałeś się!");
             }
