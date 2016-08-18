@@ -13,14 +13,21 @@ namespace Web_app.Controllers
 {
     public class AdminController : ApiController
     {
+        // GET api/Admin/1
+
+        [ResponseType(typeof(IEnumerable<DispalyData>))]
+        public IHttpActionResult Get(string filter)
+        {
+            return Ok(ServissResolver.Get().ServisDisplayFilter(filter));
+        }
         // GET api/Admin
 
         [ResponseType(typeof(IEnumerable<DispalyData>))]
         public IHttpActionResult Get()
         {
-            return Ok();
-        }
+            return Ok(ServissResolver.Get().ServisDisplayAll());
 
+        }
         // POST api/Admin
 
         [ResponseType(typeof(ModelData))]

@@ -1,17 +1,93 @@
-﻿
-@{
-    Layout = null;
-}
+﻿<form data-bind="submit:filtr">
+    <div><input name="filter" type="text" />
+    <button id="search" class="first_step" type="submit">Szukaj</button></div>
+</form>
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Admin</title>
-</head>
-<body>
-    <div> 
+<div id="TableOfUser">
+<table id="userList">
+    <thead>
+        <tr><th>First name</th><th>Last name</th><th>Phone Number</th><th>e-mail</th><th>Room Number</th><th>Event Name</th><th>Event Date</th><th>Sign Date</th></tr>
+    </thead>
+    <tbody data-bind="foreach: viewModel.users">
+        <tr>
+            <td data-bind="text:imie "></td>
+            <td data-bind="text:nazwisko "></td>
+            <td data-bind="text:nr_telefonu "></td>
+            <td data-bind="text:email "></td>
+            <td data-bind="text:id_kwaterunek "></td>
+            <td data-bind="text:rodz_wydarzenia "></td>
+            <td data-bind="text:data_wydarzenia "></td>
+            <td data-bind="text:data_zapisu "></td>
+        </tr>
+    </tbody>
+</table>
     </div>
-</body>
-</html>
+
+
+
+
+@section scripts
+{
+
+
+    <script language="javascript">
+
+
+
+
+        $(document).ready(function () {
+            ko.applyBindings(new UsersViewModel());
+
+        });
+
+        var viewModel = {
+            users: ko.observableArray()
+        }
+
+        function UsersViewModel() {
+
+            var baseUri = "http://localhost:54733/api/Admin";
+            DisplayALL();
+            this.filtr = function (formElement) {
+                viewModel.users.removeAll();
+                if ($(formElement).serialize() == 'filter=') { DisplayALL() } else
+                {
+                    $.get(baseUri, $(formElement).serialize(), function (data) {
+                        $.each(data, function (n, val) {
+                            viewModel.users.push({
+                                imie: val.imie,
+                                nazwisko: val.nazwisko,
+                                nr_telefonu: val.nr_telefonu,
+                                email: val.email,
+                                id_kwaterunek: val.id_kwaterunek,
+                                rodz_wydarzenia: val.rodz_wydarzenia,
+                                data_wydarzenia: val.data_wydarzenia,
+                                data_zapisu: val.data_zapisu
+                            })
+                        });
+                    }, "json");
+                }
+            }
+            
+             function DisplayALL () {
+                viewModel.users.removeAll();
+                $.get(baseUri, function (data) {
+                    $.each(data, function (n, val) {
+                        viewModel.users.push({
+                            imie: val.imie,
+                            nazwisko: val.nazwisko,
+                            nr_telefonu: val.nr_telefonu,
+                            email: val.email,
+                            id_kwaterunek: val.id_kwaterunek,
+                            rodz_wydarzenia: val.rodz_wydarzenia,
+                            data_wydarzenia: val.data_wydarzenia,
+                            data_zapisu: val.data_zapisu
+                        })
+                    });
+                }, "json");
+            }
+        }
+
+    </script>
+
+}
