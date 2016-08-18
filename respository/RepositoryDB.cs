@@ -7,12 +7,13 @@ using Dapper;
 using System.Data.SqlClient;
 using System.Data;
 using Model;
+using NLog;
 
 namespace Repository
 {
     public class RepositoryDB : IRepository
     {
-
+       
         #region Metody do łączenia z bazą
         private static readonly string _connectionString = "Server=Tsteodserver01v;Database=testy;Integrated Security=True;";
 
@@ -42,20 +43,29 @@ namespace Repository
           where T : class, new()
         {
             List<T> result = new List<T>();
-
-            using (SqlConnection connection = new SqlConnection(_connectionString))
+            try
             {
-
-                var queryResult = connection.Query<T>(storedProcedure, args, commandType: CommandType.StoredProcedure);
-
-                if (queryResult != null && queryResult.AsEnumerable().Any())
+                using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
-                    result = queryResult.AsEnumerable().ToList<T>();
-                }
 
+                    var queryResult = connection.Query<T>(storedProcedure, args, commandType: CommandType.StoredProcedure);
+
+                    if (queryResult != null && queryResult.AsEnumerable().Any())
+                    {
+                        result = queryResult.AsEnumerable().ToList<T>();
+                    }
+
+                }
             }
 
+            catch (SqlException sqlerror)
+            {
+                Logger logger = LogManager.GetCurrentClassLogger();
+                logger.Warn(sqlerror.Message);
+
+            }
             return result;
+
         }
 
         
@@ -63,19 +73,26 @@ namespace Repository
           where T : struct
         {
             T result = default(T);
-
-            using (SqlConnection connection = new SqlConnection(_connectionString))
+            try
             {
-
-                var queryResult = connection.Query<T>(storedProcedure, args, commandType: CommandType.StoredProcedure);
-
-                if (queryResult != null && queryResult.AsEnumerable().Any())
+                using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
-                    result = queryResult.AsEnumerable().FirstOrDefault();
+
+                    var queryResult = connection.Query<T>(storedProcedure, args, commandType: CommandType.StoredProcedure);
+
+                    if (queryResult != null && queryResult.AsEnumerable().Any())
+                    {
+                        result = queryResult.AsEnumerable().FirstOrDefault();
+                    }
+
                 }
+            }
+            catch (SqlException sqlerror)
+            {
+                Logger logger = LogManager.GetCurrentClassLogger();
+                logger.Warn(sqlerror.Message);
 
             }
-
             return result;
         }
 
@@ -84,18 +101,25 @@ namespace Repository
          where T : class, new() 
         {
             T result = default(T);
-
-            using (SqlConnection connection = new SqlConnection(_connectionString))
+            try
             {
-                var queryResult = connection.Query<T>(storedProcedure, args, commandType: CommandType.StoredProcedure);
-
-                if (queryResult != null && queryResult.AsEnumerable().Any())
+                using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
-                    result = queryResult.AsEnumerable().FirstOrDefault();
+                    var queryResult = connection.Query<T>(storedProcedure, args, commandType: CommandType.StoredProcedure);
+
+                    if (queryResult != null && queryResult.AsEnumerable().Any())
+                    {
+                        result = queryResult.AsEnumerable().FirstOrDefault();
+                    }
+
                 }
+            }
+            catch (SqlException sqlerror)
+            {
+                Logger logger = LogManager.GetCurrentClassLogger();
+                logger.Warn(sqlerror.Message);
 
             }
-
             return result;
         }
         #endregion
@@ -103,6 +127,8 @@ namespace Repository
         public void SaveData(int seventID, string sfirstName, string slastName, string sphonNamber, int sroomNamber, string semail)
         {
             InputData<ModelData>("Zapis_usera", new { firstName = sfirstName, lastName = slastName, phoneNumber = sphonNamber, email = semail, roomNumber = sroomNamber, eventID = seventID });
+            Logger logger = LogManager.GetLogger("SaveData");
+            logger.Info("User Saved. Event ID:"+seventID+" First name:"+sfirstName+" Last Name:"+slastName+" Phone Number:"+sphonNamber+" Room:"+ sroomNamber+" email:"+semail);
         }
 
         public List<DispalyData> DisplayAll()

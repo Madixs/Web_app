@@ -26,13 +26,13 @@
         <div class="formLeft">
             Room Number:
             <br />
-            <select type="text" name="roomNumber" data-bind="options: viewModel.room,optionsText: 'roomID',optionsValue:'roomID',optionsCaption: 'Choose room'" required></select>
+            <select type="text" name="roomNumber" data-bind="options: viewModel.room,optionsText:'ID_Kwaterunek',optionsValue:'ID_Kwaterunek',optionsCaption: 'Choose room'" required></select>
         </div>
 
         <div>
             Event Name:
             <br />
-            <select type="text" name="eventID" data-bind="options: viewModel2.events,optionsText: 'event',optionsValue:'Id',optionsCaption: 'Choose event'" required></select>
+            <select type="text" name="eventID" data-bind="options: viewModel2.events,optionsText: 'rodz_wydarzenia',optionsValue:'ID_Wydarzenia',optionsCaption: 'Choose event'" required></select>
         </div>
         <div id="sign">
             <button class="first_step" type="submit">Sign in!</button>
@@ -50,15 +50,32 @@
 
         $(document).ready(function () {
             ko.applyBindings(new UsersViewModel());
+            viewModel.getRooms();
+            viewModel2.getEvents();
         });
 
+
         var viewModel = {
-            // These are the initial options
-            room: ko.observableArray()
-        };
+            room: ko.observableArray(),
+            getRooms: function () {
+                var self = this;
+                $.getJSON("http://localhost:54733/api/pokoje", function (data) {
+                    self.room.removeAll();
+                    self.room(data);
+                });
+                }
+        }
 
         var viewModel2 = {
-            events: ko.observableArray()
+            events: ko.observableArray(),
+            getEvents: function () {
+                var self = this;
+                $.getJSON("http://localhost:54733/api/event", function (data) {
+                    self.events.removeAll();
+                    self.events(data);
+                });
+            }
+        
         }
 
         function UsersViewModel() {
@@ -66,36 +83,14 @@
 
             var baseUri = "http://localhost:54733/api/Admin";
             this.create = function (formElement) {
-                
+
                 $.post(baseUri, $(formElement).serialize(), null, "json"), $(formElement).each(function () {
                     this.reset();
                 });
-                viewModel.room.removeAll();
-                getRoom();
+                viewModel.getRooms();
+                alert("Zapisałeś się!");
             }
-
-            getRoom();
-            function getRoom() {
-                $.get("http://localhost:54733/api/pokoje", function (data) {
-                    $.each(data, function (n, val) {
-                        viewModel.room.push({ roomID: val.ID_Kwaterunek });
-                    });
-                }, "json");
-            }
-
-
-            $.get("http://localhost:54733/api/event", function (data) {
-                $.each(data, function (n, val) {
-
-                    viewModel2.events.push({
-                        Id: val.ID_Wydarzenia,
-                        event: val.rodz_wydarzenia
-                    })
-
-                });
-            }, "json");
         }
-
 
 
     </script>

@@ -37,55 +37,37 @@
 
         $(document).ready(function () {
             ko.applyBindings(new UsersViewModel());
+            viewModel.getUsers();
 
         });
 
         var viewModel = {
-            users: ko.observableArray()
+            users: ko.observableArray(),
+            getUsers: function (formElement) {
+                var self = this;
+                if ($(formElement).serialize() == 'filter=') {
+                    $.getJSON("http://localhost:54733/api/Admin", function (data) {
+                        self.users.removeAll();
+                        self.users(data);
+                    });
+                } else {
+                    $.getJSON("http://localhost:54733/api/Admin", $(formElement).serialize(), function (data) {
+                        self.users.removeAll();
+                        self.users(data);
+                    });
+                }
+            }
+
+
         }
 
         function UsersViewModel() {
 
             var baseUri = "http://localhost:54733/api/Admin";
-            DisplayALL();
             this.filtr = function (formElement) {
-                viewModel.users.removeAll();
-                if ($(formElement).serialize() == 'filter=') { DisplayALL() } else
-                {
-                    $.get(baseUri, $(formElement).serialize(), function (data) {
-                        $.each(data, function (n, val) {
-                            viewModel.users.push({
-                                imie: val.imie,
-                                nazwisko: val.nazwisko,
-                                nr_telefonu: val.nr_telefonu,
-                                email: val.email,
-                                id_kwaterunek: val.id_kwaterunek,
-                                rodz_wydarzenia: val.rodz_wydarzenia,
-                                data_wydarzenia: val.data_wydarzenia,
-                                data_zapisu: val.data_zapisu
-                            })
-                        });
-                    }, "json");
-                }
+                viewModel.getUsers($(formElement));
             }
-            
-             function DisplayALL () {
-                viewModel.users.removeAll();
-                $.get(baseUri, function (data) {
-                    $.each(data, function (n, val) {
-                        viewModel.users.push({
-                            imie: val.imie,
-                            nazwisko: val.nazwisko,
-                            nr_telefonu: val.nr_telefonu,
-                            email: val.email,
-                            id_kwaterunek: val.id_kwaterunek,
-                            rodz_wydarzenia: val.rodz_wydarzenia,
-                            data_wydarzenia: val.data_wydarzenia,
-                            data_zapisu: val.data_zapisu
-                        })
-                    });
-                }, "json");
-            }
+
         }
 
     </script>
