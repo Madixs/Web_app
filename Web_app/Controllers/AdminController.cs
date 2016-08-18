@@ -33,14 +33,7 @@ namespace Web_app.Controllers
         [ResponseType(typeof(ModelData))]
         public IHttpActionResult Post(ModelData data)
         {
-
-            string name = data.firstName;
-            string surname = data.lastName;
-            string phoneNumber = data.phoneNumber;
-            int room = data.roomNumber;
-            int eventID = data.eventID;
-            string email = data.email;
-            return Ok(ServissResolver.Get().ServisSaveData(eventID, name, surname, phoneNumber, room, email)); 
+            return Ok(ServissResolver.Get().ServisSaveData(data.eventID, data.firstName, data.lastName, data.phoneNumber, data.roomNumber, data.email)); 
             //return Ok(Servis.SaveData(eventID,name,surname,phoneNumber,room,email)); 
             //ServissResolver.Get().ServisSaveData(eventID, name, surname, phoneNumber, room, email)); 
         }

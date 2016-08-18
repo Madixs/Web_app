@@ -99,9 +99,12 @@
     <Content Include="App.config" />
     <Content Include="Scripts\knockout-3.4.0.debug.js" />
     <Content Include="Scripts\knockout-3.4.0.js" />
+    <Content Include="Scripts\knockout.validation.js" />
+    <Content Include="Scripts\knockout.validation.min.js" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Scripts\knockout.validation.min.js.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\respository\Repository.csproj">

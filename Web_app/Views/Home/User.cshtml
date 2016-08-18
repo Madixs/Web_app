@@ -1,29 +1,51 @@
-﻿<div id="FormContainer"><div id="SignMes">Zapisz się juz teraz!</div>
-<form data-bind="submit: create">
-    <div class="formLeft">First Name: <br />
-    <input type="text" name="firstName" /></div>
-    <div>Last Name:<br />
-    <input type="text" name="lastName" /></div>
-    <div class="formLeft">nr_telefonu:<br />
-    <input type="text" name="phoneNumber" /></div>
-    <div>email:<br />
-    <input type="text" name="email" /></div>
-    <div class="formLeft">Numer Pokoju:<br />
-    <select type="text" name="roomNumber" data-bind="options: viewModel.room,optionsCaption: 'Choose room'"></select></div>
-    <div>Rodzaj wydarzenia:<br />
-    <select type="text" name="eventID" data-bind="options: viewModel2.events,optionsText: 'event',optionsValue:'Id',optionsCaption: 'Choose event'"></select></div>
-    <div id="sign"><button class="first_step" type="submit">Zapisz się!</button></div>
-</form>
+﻿
+<div id="FormContainer">
+    <div id="SignMes">Zapisz się juz teraz!</div>
+    <form data-bind="submit: create">
+        <div class="formLeft">
+            First Name:
+            <br />
+            <input type="text" name="firstName" required autofocus/>
+        </div>
+        <div>
+            Last Name:
+            <br />
+            <input type="text" name="lastName" required autofocus/>
+        </div>
+        <div class="formLeft">
+            Phone Number:
+            <br />
+            <input type="text" name="phoneNumber" pattern="(()?\d{3}())?(-|\s)?\d{3}(-|\s)?\d{3}" required autofocus/>
+        </div>
+        <div>
+            email:
+            <br />
+            <input type="text" name="email"  pattern="^[a-zA-Z0-9._+-]+@("@")[a-zA-Z0-9.-]+\.[a-zA-Z]{2,9}$" required autofocus/>
+        </div>
 
-    </div>
+        <div class="formLeft">
+            Room Number:
+            <br />
+            <select type="text" name="roomNumber" data-bind="options: viewModel.room,optionsText: 'roomID',optionsValue:'roomID',optionsCaption: 'Choose room'" required></select>
+        </div>
+
+        <div>
+            Event Name:
+            <br />
+            <select type="text" name="eventID" data-bind="options: viewModel2.events,optionsText: 'event',optionsValue:'Id',optionsCaption: 'Choose event'" required></select>
+        </div>
+        <div id="sign">
+            <button class="first_step" type="submit">Sign in!</button>
+        </div>
+    </form>
+
+</div>
 
 @section scripts
 {
 
 
     <script language="javascript">
-
-
 
 
         $(document).ready(function () {
@@ -43,29 +65,35 @@
 
 
             var baseUri = "http://localhost:54733/api/Admin";
-             this.create = function (formElement) {
+            this.create = function (formElement) {
+                
                 $.post(baseUri, $(formElement).serialize(), null, "json"), $(formElement).each(function () {
                     this.reset();
                 });
-             }
+                viewModel.room.removeAll();
+                getRoom();
+            }
 
-             $.get("http://localhost:54733/api/pokoje", function (data) {
-                 $.each(data, function (n, val) {
-                     viewModel.room.push(val.ID_Kwaterunek);
-                 });
-             }, "json");
+            getRoom();
+            function getRoom() {
+                $.get("http://localhost:54733/api/pokoje", function (data) {
+                    $.each(data, function (n, val) {
+                        viewModel.room.push({ roomID: val.ID_Kwaterunek });
+                    });
+                }, "json");
+            }
 
 
-             $.get("http://localhost:54733/api/event", function (data) {
-                 $.each(data, function (n, val) {
+            $.get("http://localhost:54733/api/event", function (data) {
+                $.each(data, function (n, val) {
 
-                     viewModel2.events.push({
-                         Id: val.ID_Wydarzenia,
-                         event: val.rodz_wydarzenia
-                     })
+                    viewModel2.events.push({
+                        Id: val.ID_Wydarzenia,
+                        event: val.rodz_wydarzenia
+                    })
 
-                 });
-             }, "json");
+                });
+            }, "json");
         }
 
 
